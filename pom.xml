@@ -19,14 +19,7 @@
             <artifactId>elasticsearch-rest-client</artifactId>
             <version>6.4.0</version>
         </dependency>
-        <!--elasticsearch-rest-client dependencies:
-            org.apache.httpcomponents:httpasyncclient
-            org.apache.httpcomponents:httpcore-nio
-            org.apache.httpcomponents:httpclient
-            org.apache.httpcomponents:httpcore
-            commons-codec:commons-codec
-            commons-logging:commons-logging
-          -->
+        <!--elasticsearch-rest-client dependencies-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpasyncclient</artifactId>
