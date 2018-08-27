@@ -2,6 +2,12 @@ package com.w3dai.dao;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import io.searchbox.action.Action;
+import io.searchbox.client.JestClient;
+import io.searchbox.client.JestResult;
+import io.searchbox.client.JestResultHandler;
+import io.searchbox.core.Bulk;
+import io.searchbox.core.Index;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -24,6 +30,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.Arrays;
+import java.util.Set;
 
 public class ImportDataFromFiles {
     public void ImportData(String filePath) throws IOException{
@@ -36,14 +44,28 @@ public class ImportDataFromFiles {
         TransportClient client = new PreBuiltTransportClient(Settings.EMPTY)
                 .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"), 9200));
 
-        UpdateRequest request = new UpdateRequest(
-                "papers",
-                "article",
-                "1");
+        JestClient jestClient = new JestClient(){
+            public <T extends JestResult> T execute(Action<T> action) throws IOException {
+                return null;
+            }
 
-        IndexRequest indexRequest = new IndexRequest("papers", "article");
+            public <T extends JestResult> void executeAsync(Action<T> action, JestResultHandler<? super T> jestResultHandler) {
 
-        System.out.print(request);
+            }
+
+            public void shutdownClient() {
+
+            }
+
+            public void setServers(Set<String> set) {
+
+            }
+
+            public void close(){
+
+            }
+        };
+
         try{
             reader = new BufferedReader(new FileReader(file));
             String aLine = null;
@@ -51,7 +73,18 @@ public class ImportDataFromFiles {
                 JSONObject parseObject = JSON.parseObject(aLine);
 
 
-                IndexResponse response = client.prepareIndex("papers", "article", "1").setSource(parseObject).get();
+                Bulk bulk = new Bulk.Builder()
+                        .defaultIndex("papers")
+                        .defaultType("article")
+                        .addAction(Arrays.asList(
+                                new Index.Builder( parseObject ).build()
+                        )).build();
+                JestResult result = jestClient.execute(bulk);
+                if (result.isSucceeded()){
+                    System.out.println("insert success!");
+                }else{
+                    System.out.println("insert failed");
+                }
 
 
 
