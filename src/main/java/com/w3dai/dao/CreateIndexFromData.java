@@ -19,7 +19,7 @@ public class CreateIndexFromData{
                 RestClient.builder(
                         new HttpHost("localhost", 9200, "http")));
 
-        CreateIndexRequest request = new CreateIndexRequest("papers04");
+        CreateIndexRequest request = new CreateIndexRequest("papers");
 
         request.settings(Settings.builder() // <1>
                 .put("index.number_of_shards", 3)

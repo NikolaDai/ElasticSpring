@@ -60,6 +60,11 @@
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.49</version>
+        </dependency>
         <!--The following dependency will be deprecated on ES 7.0 however we still need it to create the index here by using adminclient which we
         will figure out sooner-->
         <dependency>
