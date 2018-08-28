@@ -30,12 +30,14 @@ public class ImportDataFromFiles {
                       .build());
         JestClient jestClient = factory.getObject();
 
+        int lineNum = 0;
         try {
                 reader = new BufferedReader(new FileReader(file));
                 String aLine;
                 while ((aLine = reader.readLine()) != null) {
+                    System.out.println(lineNum++);
                     JSONObject parseObject = JSON.parseObject(aLine);
-                    Index index = new Index.Builder(parseObject).index("paper").type("article").build();
+                    Index index = new Index.Builder(parseObject).index("papers").type("article").build();
                     JestResult result = jestClient.execute(index);
                     if (result != null && !result.isSucceeded())
                         throw new RuntimeException(result.getErrorMessage() + "插入更新索引失败!");
