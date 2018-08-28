@@ -53,19 +53,25 @@ public class CreateIndexFromData{
                         "      },\n" +
                         "      \"作者\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"false\"\n"+
+                        "        \"index\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_max_word\"\n" +
                         "      },\n" +
                         "      \"责编\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"false\"\n"+
+                        "        \"index\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_max_word\"\n" +
                         "      },\n" +
                         "      \"版面\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"false\"\n"+
+                        "        \"index\":\"true\"\n"+
                         "      },\n" +
                         "      \"分类\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"false\"\n"+
+                        "        \"index\":\"true\"\n"+
                         "      },\n" +
                         "      \"日期\": {\n" +
                         "        \"type\": \"date\",\n" +
