@@ -4,14 +4,14 @@ import java.io.Serializable;
 public class Article implements Serializable{
     private String articleTitle;
     private String articleContent;
-    private String[] articleAuthos;
+    private String[] articleAuthors;
 
     public String[] getArticleAuthos() {
-        return articleAuthos;
+        return articleAuthors;
     }
 
     public void setArticleAuthos(String[] articleAuthos) {
-        this.articleAuthos = articleAuthos;
+        this.articleAuthors = articleAuthos;
     }
 
     public String getArticleTitle() {
