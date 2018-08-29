@@ -91,7 +91,7 @@ public class CreateIndexFromData{
         CreateIndexResponse createIndexResponse = client.indices().create(request, RequestOptions.DEFAULT);
 
         boolean acknowledged = createIndexResponse.isAcknowledged();
-        boolean shardsAcknowledged = createIndexResponse.isShardsAcknowledged();
+        boolean shardsAcknowledged = createIndexResponse.isAcknowledged();
 
         System.out.println(acknowledged + "##" + shardsAcknowledged);
 
