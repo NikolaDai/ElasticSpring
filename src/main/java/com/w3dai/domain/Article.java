@@ -1,7 +1,13 @@
 package com.w3dai.domain;
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "Articles")
 public class Article implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String articleTitle;
     private String articleContent;
     private String[] articleAuthors;
