@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @since 2018/8/26
  */
 @Entity
-@Table(name = "Authors")
+@Table(name = "authors")
 public class Author implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,10 @@ public class Author implements Serializable{
     private String authorAddress;
     private String authorCellphone;
     private String authorWechat;
+
+    public Author(){
+
+    }
 
     public long getId() {
         return id;
