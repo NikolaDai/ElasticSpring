@@ -31,25 +31,13 @@ public class CreateIndexFromData{
                         "  \"article\": {\n" +
                         "    \"properties\": {\n" +
                         "      \"引题\": {\n" +
-                        "        \"type\": \"text\",\n" +
-                        "        \"store\":\"false\",\n"+
-                        "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "        \"type\": \"text\"\n" +
                         "      },\n" +
                         "      \"标题\": {\n" +
-                        "        \"type\": \"text\",\n" +
-                        "        \"store\":\"false\",\n"+
-                        "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "        \"type\": \"text\"\n" +
                         "      },\n" +
                         "      \"副题\": {\n" +
-                        "        \"type\": \"text\",\n" +
-                        "        \"store\":\"false\",\n"+
-                        "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "        \"type\": \"text\"\n" +
                         "      },\n" +
                         "      \"作者\": {\n" +
                         "        \"type\": \"text\",\n" +
@@ -70,6 +58,10 @@ public class CreateIndexFromData{
                         "        \"index\":\"true\"\n"+
                         "      },\n" +
                         "      \"分类\": {\n" +
+                        "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\"\n"+
+                        "      },\n" +
+                        "      \"体裁\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\"\n"+
                         "      },\n" +
