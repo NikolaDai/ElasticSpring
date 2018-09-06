@@ -49,3 +49,36 @@ search analysis 将用户输入的搜索文本进行分词。
 日期
 体裁
 正文
+
+## about usage of Head plugin in ES
+modify the build mapping element properties:
+http://localhost:9200/papers/article/_mapping?pretty
+
+```
+{
+	"article":{
+		"properties":{
+			"正文": {
+				"type": "text",
+				"term_vector": "with_positions_offsets",
+				"analyzer": "ik_max_word",
+				"search_analyzer": "ik_smart"
+					}
+			}
+		}
+}
+```
+
+normal query
+http://localhost:9200/papers/_search/
+```aidl
+{"query":{"match":{"作者":"戴斌"}}}
+```
+test the analyzer
+http://localhost:9200/_analyze
+
+```aidl
+{"analyzer":"ik_smart","text":"有为有守方能合格 ■米斌斌 “四讲四有”是合格党员的标准"}
+```
+
+https://www.cnblogs.com/LittleFeiHu/p/6664575.html?utm_source=itdadao&utm_medium=referral
