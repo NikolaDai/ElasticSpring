@@ -30,46 +30,46 @@ public class CreateIndexFromData{
                 "{\n" +
                         "  \"article\": {\n" +
                         "    \"properties\": {\n" +
-                        "      \"引题\": {\n" +
+                        "      \"eyebrowTitle\": {\n" +
                         "        \"type\": \"text\"\n" +
                         "      },\n" +
-                        "      \"标题\": {\n" +
+                        "      \"mainTitle\": {\n" +
                         "        \"type\": \"text\"\n" +
                         "      },\n" +
-                        "      \"副题\": {\n" +
+                        "      \"subTitle\": {\n" +
                         "        \"type\": \"text\"\n" +
                         "      },\n" +
-                        "      \"作者\": {\n" +
+                        "      \"authorsName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
                         "         \"analyzer\": \"ik_max_word\",\n" +
                         "         \"search_analyzer\": \"ik_max_word\"\n" +
                         "      },\n" +
-                        "      \"责编\": {\n" +
+                        "      \"editorsName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
                         "         \"analyzer\": \"ik_max_word\",\n" +
                         "         \"search_analyzer\": \"ik_max_word\"\n" +
                         "      },\n" +
-                        "      \"版面\": {\n" +
+                        "      \"pageName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\"\n"+
                         "      },\n" +
-                        "      \"分类\": {\n" +
+                        "      \"paperCategory\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\"\n"+
                         "      },\n" +
-                        "      \"体裁\": {\n" +
+                        "      \"paperType\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\"\n"+
                         "      },\n" +
-                        "      \"日期\": {\n" +
+                        "      \"publishDate\": {\n" +
                         "        \"type\": \"date\",\n" +
                         "        \"format\":\"yyyymmdd\"\n"+
                         "      },\n" +
-                        "      \"正文\": {\n" +
+                        "      \"articleText\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
                         "         \"analyzer\": \"ik_max_word\",\n" +
