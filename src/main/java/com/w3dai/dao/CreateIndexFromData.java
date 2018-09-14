@@ -43,15 +43,15 @@ public class CreateIndexFromData{
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "         \"analyzer\": \"ik_smart\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"editorsName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "         \"analyzer\": \"ik_smart\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"pageName\": {\n" +
                         "        \"type\": \"text\",\n" +
@@ -72,7 +72,7 @@ public class CreateIndexFromData{
                         "      \"articleText\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"analyzer\": \"ik_smart\",\n" +
                         "         \"search_analyzer\": \"ik_max_word\"\n" +
                         "      }\n" +
                         "    }\n" +
