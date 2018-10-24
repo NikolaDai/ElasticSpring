@@ -31,17 +31,33 @@ public class CreateIndexFromData{
                         "  \"article\": {\n" +
                         "    \"properties\": {\n" +
                         "      \"eyebrowTitle\": {\n" +
-                        "        \"type\": \"text\"\n" +
+                        "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"mainTitle\": {\n" +
-                        "        \"type\": \"text\"\n" +
+                        "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"subTitle\": {\n" +
-                        "        \"type\": \"text\"\n" +
+                        "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"authorsName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
                         "         \"analyzer\": \"ik_smart\",\n" +
                         "         \"search_analyzer\": \"ik_smart\"\n" +
@@ -49,17 +65,28 @@ public class CreateIndexFromData{
                         "      \"editorsName\": {\n" +
                         "        \"type\": \"text\",\n" +
                         "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
                         "         \"analyzer\": \"ik_smart\",\n" +
                         "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"pageName\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"true\"\n"+
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\"\n"+
+                        "      },\n" +
+                        "      \"columnName\": {\n" +
+                        "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\"\n"+
                         "      },\n" +
                         "      \"paperCategory\": {\n" +
                         "        \"type\": \"text\",\n" +
-                        "        \"index\":\"true\"\n"+
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
+                        "        \"term_vector\": \"with_positions_offsets\",\n" +
+                        "         \"analyzer\": \"ik_smart\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      },\n" +
                         "      \"paperType\": {\n" +
                         "        \"type\": \"text\",\n" +
@@ -67,13 +94,15 @@ public class CreateIndexFromData{
                         "      },\n" +
                         "      \"publishDate\": {\n" +
                         "        \"type\": \"date\",\n" +
-                        "        \"format\":\"yyyymmdd\"\n"+
+                        "        \"format\":\"yyyyMMdd\"\n"+
                         "      },\n" +
                         "      \"articleText\": {\n" +
                         "        \"type\": \"text\",\n" +
+                        "        \"index\":\"true\",\n"+
+                        "        \"fielddata\":\"true\",\n"+
                         "        \"term_vector\": \"with_positions_offsets\",\n" +
-                        "         \"analyzer\": \"ik_smart\",\n" +
-                        "         \"search_analyzer\": \"ik_max_word\"\n" +
+                        "         \"analyzer\": \"ik_max_word\",\n" +
+                        "         \"search_analyzer\": \"ik_smart\"\n" +
                         "      }\n" +
                         "    }\n" +
                         "  }\n" +

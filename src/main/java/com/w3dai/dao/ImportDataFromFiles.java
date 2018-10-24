@@ -35,7 +35,7 @@ public class ImportDataFromFiles {
                 reader = new BufferedReader(new FileReader(file));
                 String aLine;
                 while ((aLine = reader.readLine()) != null) {
-                    System.out.println(lineNum++);
+                    System.out.println("\n\n\n######################################" + (lineNum++) + "######################################\n\n\n" );
                     JSONObject parseObject = JSON.parseObject(aLine);
                     Index index = new Index.Builder(parseObject).index("papers").type("article").build();
                     JestResult result = jestClient.execute(index);
