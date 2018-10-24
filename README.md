@@ -70,10 +70,23 @@ http://localhost:9200/papers/article/_mapping?pretty
 ```
 
 normal query
-http://localhost:9200/papers/_search/
+http://localhost:9200/papers/_search/  POST
 ```aidl
-{"query":{"match":{"作者":"戴斌"}}}
+{"query":{"match":{"articleText":"十二届"}}}
 ```
+
+{
+"query":{
+"bool":{
+"must":[
+{"match":{"articleText":"十二届"}},
+{"match":{"authorsName":"代烽"}}
+]
+}
+},
+"from":0,
+"size":1000
+}
 test the analyzer
 http://localhost:9200/_analyze
 
